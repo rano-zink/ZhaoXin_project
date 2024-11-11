@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>基本语法 - ZX's MkDocs</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u57fa\u672c\u8bed\u6cd5";
+        var mkdocs_page_input_path = "project\\cpp\\01demo.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> ZX's MkDocs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">主页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">主线</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">行波马达</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%A1%8C%E6%B3%A2%E9%A9%AC%E8%BE%BE/SPI/">SPI</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">支线</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">cpp</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">基本语法</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#01helloworld">01helloworld!</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../CPPoutline/">重要概念</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS/">os</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">ZX's MkDocs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>支线 &raquo;</li>
+          <li>cpp &raquo;</li>
+      <li>基本语法</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="cpp">cpp</h1>
+<h3 id="01helloworld">01helloworld!</h3>
+<h1 id="include">include <iostream></h1>
+<p>using namespace std;
+int main()
+{
+    int a, b,c;
+    cin &gt;&gt; a &gt;&gt; b;
+    cout &lt;&lt; "" &lt;&lt; a &lt;&lt; "+" &lt;&lt; "" &lt;&lt; b &lt;&lt; "=" &lt;&lt; a + b &lt;&lt; endl;
+    cout &lt;&lt; "helloworld!" &lt;&lt; endl;
+}</p>
+<!-- Q:串口通信 发送的是字符串 如何在接受到字符串以后解析为整型或者说浮点数 -->
+
+<h2 id="_1">全局变量与局部变量初始化的问题</h2>
+<h3 id="_2">全局变量</h3>
+<p>全局变量不初始化，会自动初始化为0.
+全局变量可以不初始化，直接默认初始化为0.</p>
+<h3 id="_3">局部变量</h3>
+<p>局部变量不初始化，会报错，使用了未被初始化的局部变量.</p>
+<p>使用了未初始化的局部变量“data_tmp”</p>
+<h2 id="c-data">c++ data是关键字吗</h2>
+<h2 id="_4">常变量</h2>
+<p>变量定义加 const关键字 ，在程序执行的过程中，变量的值不再被改变。初始化之后，不能给常变量赋值。
+常变量是限制变量的访问权限。
+{
+    const int a=100;
+}</p>
+<h2 id="_5">运算符</h2>
+<p>### 整除运算符 \
+\ 如果参与运算的两个数据类型都是整形，则结果保留整数部分。
+如果需要精确的计算结果，需要两个浮点数相除，或者对数据类型强制转换以后再处理。
+{
+    int a = 100, b = 3;
+    cout &lt;&lt; "a/b= " &lt;&lt; a / b &lt;&lt; endl;
+    cout &lt;&lt; "%fa/b=" &lt;&lt; (float)a / float(b) &lt;&lt; endl;
+    /<em>
+    a/b= 33
+    %fa/b=33.3333
+    </em>/
+}</p>
+<h3 id="_6">逻辑运算表达式中 不一定所有的运算被执行</h3>
+<p>如果逻辑运算可以提前判断整个逻辑表达式子的真假，那后面的运算将执行。
+{
+    int c = 1, a = 0, b = 0;
+    c = (a &gt; 0) &amp;&amp; (b = 2);
+    cout &lt;&lt; "a= "&lt;&lt;a&lt;&lt;"b= "&lt;&lt;b&lt;&lt;"c= "&lt;&lt;c&lt;&lt; endl;
+    //a=0 b=0 c=0 
+}</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../%E8%A1%8C%E6%B3%A2%E9%A9%AC%E8%BE%BE/SPI/" class="btn btn-neutral float-left" title="SPI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../CPPoutline/" class="btn btn-neutral float-right" title="重要概念">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright &copy; 2023 - 2024 zhaoxin</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../%E8%A1%8C%E6%B3%A2%E9%A9%AC%E8%BE%BE/SPI/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../CPPoutline/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
