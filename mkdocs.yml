@@ -2,23 +2,29 @@ site_name: ZX's MkDocs
 repo_url: https://gitee.com/rano-zink/mymkdocs/
 repo_name: /mymkdocs/
 edit_uri: ""
-site_description: 能做一点是一点，能学一点是一点。
-
+site_description: 
 copyright: Copyright &copy; 2023 - 2024 zhaoxin
-
-theme : readthedocs
-
-nav: 
-  - 主页: index.md
-  - 主线:
-      - 行波马达:  
-        - SPI: project/行波马达/SPI.md
-  - 支线: 
-    - cpp: 
-      -  基本语法: project/cpp/01demo.md
-      - 重要概念:  project/cpp/CPPoutline.md
-    - os : project/操作系统/OS.md
-
-
+# 冒号后添加空格
+theme: readthedocs
+nav:
+  - Home: index.md
+  - 项目:
+    - 行波马达:
+      - SPI: project/行波马达/SPI.md
+      - 控制: project/行波马达/马达控制.md
+    - 微镜:
+      - 滑模控制: project/微镜/滑模控制.md
+  - Wiki:
+    - 编程:
+      - CPP:
+        - ch1: project/cpp/01demo.md
+        - ch2: project/cpp/CPPoutline.md
+    #   - python:
+    # - 电路:
+    # - FPGA:
+    # - 深度学习:
+    # - 控制算法:
+    # - 论文写作:
+    - 操作系统: project/操作系统/OS.md
 
 
