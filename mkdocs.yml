@@ -13,7 +13,7 @@ nav:
       - SPI: project/行波马达/SPI.md
       - 控制: project/行波马达/马达控制.md
     - 微镜:
-      - 滑模控制: project/微镜/滑模控制.md
+      - 滑膜控制: project/微镜/滑膜控制.md
   - Wiki:
     - 编程:
       - CPP:
