@@ -1,9 +1,9 @@
 site_name: ZX's MkDocs
-repo_url: https://gitee.com/rano-zink/mymkdocs/
+repo_url: https://rano-zink.github.io/ZhaoXin_project/
 repo_name: /mymkdocs/
 edit_uri: ""
 site_description: 
-copyright: Copyright &copy; 2023 - 2024 zhaoxin
+copyright: Copyright &copy; 2023 - 2025 zhaoxin
 # 冒号后添加空格
 theme: readthedocs
 nav:
@@ -19,6 +19,8 @@ nav:
       - CPP:
         - ch1: project/cpp/01demo.md
         - ch2: project/cpp/CPPoutline.md
+  - 其它:
+    - mkdocs : project/其它/mkdocs简明教程.md
     #   - python:
     # - 电路:
     # - FPGA:

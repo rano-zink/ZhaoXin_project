@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>操作系统 - ZX's MkDocs</title>
+    <title>mkdocs - ZX's MkDocs</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "\u64cd\u4f5c\u7cfb\u7edf";
-        var mkdocs_page_input_path = "project\\\u64cd\u4f5c\u7cfb\u7edf\\OS.md";
+        var mkdocs_page_name = "mkdocs";
+        var mkdocs_page_input_path = "project\\\u5176\u5b83\\mkdocs\u7b80\u660e\u6559\u7a0b.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -78,15 +78,11 @@
               </ul>
               <p class="caption"><span class="caption-text">其它</span></p>
               <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%85%B6%E5%AE%83/mkdocs%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/">mkdocs</a>
-                  </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">操作系统</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">mkdocs</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_2">关于操作系统的理解</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#freertos">FreeRTOS的移植与应用</a>
-    </li>
     </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS/">操作系统</a>
                   </li>
               </ul>
       </div>
@@ -104,7 +100,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>其它 &raquo;</li>
-      <li>操作系统</li>
+      <li>mkdocs</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -113,16 +109,93 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="_1">为什么要上操作系统</h1>
-<p>目前了解到的操作系统就是最简单的FreeRTOS
-操作系统对于系统任务的管理和资源的合理利用，提高效率，至关重要</p>
-<h2 id="_2">关于操作系统的理解</h2>
-<h2 id="freertos">FreeRTOS的移植与应用</h2>
+                <p>mkdocs</p>
+<p><a href="https://blog.csdn.net/qq_41261251/article/details/116021097">主要参考教程</a></p>
+<h1 id="bash">bash 操作</h1>
+<ul>
+<li>创建新站点</li>
+</ul>
+<pre><code class="language-bash">mkdocs new dir_name
+</code></pre>
+<p><em>dir_name为站点的名字，可以自己命名</em></p>
+<ul>
+<li>在站点目录下生成site文件夹</li>
+</ul>
+<pre><code class="language-bash">mkdocs build
+</code></pre>
+<ul>
+<li>访问本地站点</li>
+</ul>
+<pre><code class="language-bash">mkdocs serve
+</code></pre>
+<h1 id="yaml">YAML文档配置</h1>
+<pre><code class="language-YAML">site_name: ZX's MkDocs
+repo_url: https://gitee.com/rano-zink/mymkdocs/
+repo_name: /mymkdocs/
+edit_uri: &quot;&quot;
+site_description: 
+copyright: Copyright &amp;copy; 2023 - 2024 zhaoxin
+
+theme: readthedocs
+nav:
+  - Home: index.md
+  - 项目:
+    - 行波马达:
+      - SPI: project/行波马达/SPI.md
+      - 控制: project/行波马达/马达控制.md
+    - 微镜:
+      - 滑膜控制: project/微镜/滑膜控制.md
+  - Wiki:
+    - 编程:
+      - CPP:
+        - ch1: project/cpp/01demo.md
+        - ch2: project/cpp/CPPoutline.md
+    #   - python: 不可以出现空目录 nav下的目录最后一级必须指向具体的文档
+    # - 电路:
+    # - FPGA:
+    # - 深度学习:
+    # - 控制算法:
+    # - 论文写作:
+    - 操作系统: project/操作系统/OS.md
+</code></pre>
+<ul>
+<li>同一级目录的缩进应保持一致</li>
+<li>nav 不可以出现空目录 nav下的目录最后一级必须指向具体的文档</li>
+<li>目录下的文件要与文件夹中保持一致，如果文件在文件夹中却不在目录下，可能会报错</li>
+</ul>
+<h1 id="github">github</h1>
+<ul>
+<li>建立远程仓库并与mkdocs站点进行连接</li>
+</ul>
+<pre><code>git init
+git remote add origin2 https://github.com/rano-zink/ZhaoXin_project.git
+</code></pre>
+<ul>
+<li>方法一：手动部署
+将 site 目录下的所有文件复制到一个新的分支（通常是 gh-pages）。</li>
+</ul>
+<pre><code class="language-bash">git checkout -b gh-pages
+cp -r site/* .
+git add .
+git commit -m &quot;Deploy documentation&quot;
+git push origin2 gh-pages
+</code></pre>
+<p>在 GitHub 仓库的设置页面中，找到 “GitHub Pages” 部分，将 “Source” 设置为 gh-pages 分支，然后点击 “Save”。稍等片刻，你的文档就会部署到 https://<your-github-username>.github.io/<your-repo-name> 上。
+<a href="https://rano-zink.github.io/ZhaoXin_project/">mydocs</a></p>
+<ul>
+<li>方法二：使用 mkdocs gh-deploy 命令
+运行以下命令，MkDocs 会自动将构建好的文档推送到 gh-pages 分支：</li>
+</ul>
+<pre><code class="language-bash">mkdocs gh-deploy
+</code></pre>
+<p>之后，在 GitHub 仓库的设置页面中确认 “GitHub Pages” 的源分支为 gh-pages。
+完成上述步骤后，你就可以通过 https://<your-github-username>.github.io/<your-repo-name> 访问部署好的 MkDocs 文档了。</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../%E5%85%B6%E5%AE%83/mkdocs%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/" class="btn btn-neutral float-left" title="mkdocs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../cpp/CPPoutline/" class="btn btn-neutral float-left" title="ch2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS/" class="btn btn-neutral float-right" title="操作系统">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -146,8 +219,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../%E5%85%B6%E5%AE%83/mkdocs%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../cpp/CPPoutline/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
