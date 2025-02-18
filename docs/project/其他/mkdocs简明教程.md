@@ -99,6 +99,7 @@ git push origin <your-main-branch-name>
 
 ## 更新分支
 * 方法一：手动更新 gh-pages 分支
+* 谨慎操作 文件丢失了
 切换到 gh-pages 分支：
 ```bash
 git checkout gh-pages
